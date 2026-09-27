@@ -12,143 +12,66 @@
 body:before{content:"";position:fixed;inset:-30%;z-index:-5;pointer-events:none;background:radial-gradient(circle at 50% 20%,rgba(255,0,61,.18),transparent 24%),radial-gradient(circle at 10% 80%,rgba(255,0,61,.09),transparent 22%),radial-gradient(circle at 90% 65%,rgba(255,0,61,.1),transparent 20%);animation:bgPulse 9s ease-in-out infinite alternate}
 body:after{content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;background:linear-gradient(115deg,transparent 0 47%,rgba(255,0,61,.025) 50%,transparent 53%);background-size:260px 260px;animation:gridMove 16s linear infinite}
 @keyframes bgPulse{from{transform:scale(1) rotate(0deg);opacity:.75}to{transform:scale(1.12) rotate(2deg);opacity:1}}@keyframes gridMove{to{background-position:260px 260px}}
-
-/* NAV */
 .nav{height:72px;position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:0 5%;background:rgba(3,3,3,.72);border-bottom:1px solid rgba(255,0,61,.13);backdrop-filter:blur(20px);animation:navIn .8s ease both}.logo{font-size:20px;font-weight:900;letter-spacing:-1.3px}.logo span{color:var(--red)}.nav-right{margin-left:auto;display:flex;align-items:center;gap:14px}.nav-link{font-size:11px;font-weight:800;color:#888;transition:.25s}.nav-link:hover{color:#fff}.nav-link.active{color:var(--red)}
 .search{width:40px;height:40px;border:1px solid rgba(255,255,255,.1);background:#0b0b0b;color:#fff;border-radius:10px;display:grid;place-items:center;font-size:18px;transition:.3s}.search:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
-
-/* DASHBOARD */
-.dashboard{min-height:100vh;position:relative;overflow:hidden;padding:72px 5% 0}.dashboard-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,#030303 0%,rgba(3,3,3,.92) 35%,rgba(3,3,3,.58) 68%,rgba(3,3,3,.25) 100%),linear-gradient(0deg,#030303 0%,transparent 40%,rgba(3,3,3,.3) 100%),url('https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg');background-size:cover;background-position:center;opacity:.58;transform:scale(1.06);animation:heroZoom 15s ease-in-out infinite alternate}.dashboard-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 46%,rgba(255,0,61,.17),transparent 24%),linear-gradient(90deg,rgba(3,3,3,.1),rgba(255,0,61,.04),rgba(3,3,3,.1))}.red-scan{position:absolute;top:72px;bottom:0;left:-20%;width:16%;background:linear-gradient(90deg,transparent,rgba(255,0,61,.18),transparent);filter:blur(10px);animation:scan 7s ease-in-out infinite;z-index:1}.dashboard-content{position:relative;z-index:3;min-height:calc(100vh - 72px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);align-items:center;gap:5%;padding:40px 0 70px}.copy{max-width:720px;animation:copyIn 1s cubic-bezier(.16,1,.3,1) both}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:10px;font-weight:900;letter-spacing:2px;color:#fff;margin-bottom:23px}.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red);animation:dotPulse 1.2s infinite}.copy h1{font-size:clamp(54px,8vw,108px);line-height:.86;letter-spacing:-6px;font-weight:900;text-transform:uppercase;text-shadow:0 0 50px rgba(255,0,61,.12)}.copy h1 span{color:var(--red);text-shadow:0 0 35px rgba(255,0,61,.5)}.copy p{max-width:600px;margin-top:28px;color:#aaa;font-size:14px;line-height:1.8}.actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:30px}
-.watch-main,.secondary{padding:17px 40px;border-radius:50px;cursor:pointer;border:0;background:#fff;color:#111;box-shadow:rgba(0,0,0,.12) 0 0 8px;letter-spacing:1.5px;text-transform:uppercase;font-size:13px;font-weight:900;transition:all .5s ease;position:relative;overflow:hidden}.watch-main{color:#111}.watch-main span{position:relative;z-index:2}.watch-main:after,.secondary:after{content:"";position:absolute;inset:-50%;background:linear-gradient(120deg,transparent 42%,rgba(255,255,255,.7) 50%,transparent 58%);transform:translateX(-70%) rotate(10deg);transition:.7s}.watch-main:hover,.secondary:hover{letter-spacing:3px;background:var(--red);color:#fff;box-shadow:0 7px 29px 0 rgba(255,0,61,.55);transform:translateY(-3px)}.watch-main:hover:after,.secondary:hover:after{transform:translateX(70%) rotate(10deg)}.watch-main:active,.secondary:active{letter-spacing:3px;background:#c90030;color:#fff;box-shadow:0 0 0 0 rgba(255,0,61,0);transform:translateY(7px);transition:100ms}
-
-/* INFO STRIP */
+.dashboard{min-height:100svh;position:relative;overflow:hidden;padding:72px 5% 0}.dashboard-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,#030303 0%,rgba(3,3,3,.92) 35%,rgba(3,3,3,.58) 68%,rgba(3,3,3,.25) 100%),linear-gradient(0deg,#030303 0%,transparent 40%,rgba(3,3,3,.3) 100%),url('https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg');background-size:cover;background-position:center;opacity:.58;transform:scale(1.06);animation:heroZoom 15s ease-in-out infinite alternate}.dashboard-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 46%,rgba(255,0,61,.17),transparent 24%),linear-gradient(90deg,rgba(3,3,3,.1),rgba(255,0,61,.04),rgba(3,3,3,.1))}.red-scan{position:absolute;top:72px;bottom:0;left:-20%;width:16%;background:linear-gradient(90deg,transparent,rgba(255,0,61,.18),transparent);filter:blur(10px);animation:scan 7s ease-in-out infinite;z-index:1}.dashboard-content{position:relative;z-index:3;min-height:calc(100vh - 72px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);align-items:center;gap:5%;padding:40px 0 70px}.copy{max-width:720px;animation:copyIn 1s cubic-bezier(.16,1,.3,1) both}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:10px;font-weight:900;letter-spacing:2px;color:#fff;margin-bottom:23px}.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red);animation:dotPulse 1.2s infinite}.copy h1{font-size:clamp(54px,8vw,108px);line-height:.86;letter-spacing:-6px;font-weight:900;text-transform:uppercase;text-shadow:0 0 50px rgba(255,0,61,.12)}.copy h1 span{color:var(--red);text-shadow:0 0 35px rgba(255,0,61,.5)}.copy p{max-width:600px;margin-top:28px;color:#aaa;font-size:14px;line-height:1.8}.actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:30px}
+.watch-main,.secondary{padding:17px 29px;border-radius:50px;cursor:pointer;border:0;letter-spacing:1.5px;text-transform:uppercase;font-size:13px;transition:all .5s ease}.watch-main{position:relative;overflow:hidden;color:#fff;background:var(--red);font-weight:900;box-shadow:rgba(255,0,61,.16) 0 0 8px}.watch-main:before{content:"";position:absolute;inset:-100% 40%;background:rgba(255,255,255,.28);transform:rotate(25deg);animation:shine 3.2s infinite}.watch-main span{position:relative}.watch-main:hover{letter-spacing:3px;background:#fff;color:#111;box-shadow:rgb(255,0,61) 0 7px 29px 0;transform:translateY(-3px)}.watch-main:active{letter-spacing:3px;background:#fff;color:#111;box-shadow:rgb(255,0,61) 0 0 0 0;transform:translateY(6px);transition:100ms}
+.secondary{border:1px solid rgba(255,255,255,.16);background:#0b0b0b;color:#ddd;font-weight:800}.secondary:hover{letter-spacing:3px;background:var(--red);color:#fff;border-color:var(--red);box-shadow:rgb(255,0,61) 0 7px 29px 0;transform:translateY(-3px)}.secondary:active{transform:translateY(6px);transition:100ms}
 .info-strip{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}.info{min-width:145px;padding:13px 15px;border:1px solid rgba(255,255,255,.08);background:rgba(8,8,8,.58);border-radius:10px;backdrop-filter:blur(12px);animation:float 5s ease-in-out infinite}.info:nth-child(2){animation-delay:.7s}.info:nth-child(3){animation-delay:1.4s}.info strong{display:block;color:var(--red);font-size:15px;font-weight:900}.info small{display:block;color:#777;font-size:9px;margin-top:4px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
-
-/* VISUAL */
 .visual{height:590px;position:relative;display:flex;align-items:center;justify-content:center;animation:visualIn 1.1s .15s cubic-bezier(.16,1,.3,1) both}.orbit{position:absolute;width:470px;height:470px;border:1px solid rgba(255,0,61,.22);border-radius:50%;animation:orbit 14s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 22px var(--red)}.orbit:before{top:34px;left:90px}.orbit:after{right:55px;bottom:75px}.glow{position:absolute;width:390px;height:390px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,61,.25),transparent 68%);filter:blur(12px);animation:glow 3s ease-in-out infinite alternate}.poster-main{position:relative;width:min(285px,52vw);height:415px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,0,61,.45);box-shadow:0 35px 100px rgba(0,0,0,.85),0 0 65px rgba(255,0,61,.18);transform:perspective(1000px) rotateY(-9deg) rotateX(3deg);animation:posterFloat 5s ease-in-out infinite}.poster-main img{width:100%;height:100%;object-fit:cover}.poster-main:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.95)),linear-gradient(90deg,rgba(255,0,61,.08),transparent 45%)}.poster-label{position:absolute;z-index:2;left:17px;bottom:18px;font-size:9px;font-weight:900;letter-spacing:1.4px;color:#fff}.poster-title{position:absolute;z-index:2;left:17px;right:15px;bottom:36px;font-size:24px;font-weight:900;line-height:.95;text-transform:uppercase}.float-card{position:absolute;width:145px;height:205px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 25px 55px rgba(0,0,0,.65);background:#0b0b0b}.float-card img{width:100%;height:100%;object-fit:cover}.float-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.9))}.float-card b{position:absolute;z-index:2;left:11px;bottom:11px;font-size:10px}.card-a{left:0;top:72px;transform:rotate(-8deg);animation:cardA 5s ease-in-out infinite}.card-b{right:0;top:35px;transform:rotate(8deg);animation:cardB 5.5s ease-in-out infinite}.card-c{right:35px;bottom:38px;transform:rotate(5deg) scale(.86);animation:cardC 6s ease-in-out infinite}.visual-badge{position:absolute;right:35px;top:0;background:var(--red);color:#fff;border-radius:9px;padding:9px 12px;font-size:9px;font-weight:900;letter-spacing:1px;box-shadow:0 0 30px rgba(255,0,61,.4);animation:badge 2s ease-in-out infinite}.scroll{position:absolute;bottom:25px;left:5%;display:flex;align-items:center;gap:10px;color:#555;font-size:9px;text-transform:uppercase;letter-spacing:2px;z-index:3}.scroll i{width:28px;height:1px;background:var(--red);animation:scrollLine 1.5s infinite}
-
-/* BRUTALIST BUTTONS */
-.button-container{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}.brutalist-button{display:flex;flex-direction:column;align-items:center;justify-content:center;width:150px;height:112px;color:#f3eeee;font-weight:900;text-decoration:none;position:relative;cursor:pointer;overflow:hidden;transition:all .3s cubic-bezier(.25,.8,.25,1);background:#130208;border:3px solid var(--red);border-radius:12px;box-shadow:5px 5px 0 #000,0 0 28px rgba(255,0,61,.12)}.brutalist-button:hover{background:#2a0610;border-color:#fff;transform:translate(-5px,-5px) rotate(1deg);box-shadow:10px 10px 0 #000,0 0 40px rgba(255,0,61,.32)}.brutalist-button:active{transform:translate(-2px,-2px) scale(.98)}.brutalist-button:before,.brutalist-button:after{content:"";position:absolute;top:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transition:.6s}.brutalist-button:before{left:-100%}.brutalist-button:after{left:100%}.brutalist-button:hover:before{animation:swipeRight 1.5s infinite}.brutalist-button:hover:after{animation:swipeLeft 1.5s infinite}.custom-icon{width:48px;height:48px;z-index:3;display:grid;place-items:center;border-radius:12px;background:rgba(255,0,61,.12);border:1px solid rgba(255,0,61,.35);transition:.35s}.custom-icon svg{width:30px;height:30px;fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:.35s}.brutalist-button:hover .custom-icon{transform:translateY(-8px) rotate(-5deg) scale(1.05);background:var(--red);border-color:var(--red);box-shadow:0 0 30px rgba(255,0,61,.45)}.brutalist-button:hover .custom-icon svg{stroke:#fff;animation:iconSpin 2.5s linear infinite}.openai-text{font-size:10px;letter-spacing:1px;opacity:0;max-height:0;overflow:hidden;transition:.3s;z-index:3;margin-top:0}.brutalist-button:hover .openai-text{opacity:1;max-height:30px;margin-top:7px}.button-text{display:flex;flex-direction:column;align-items:center;line-height:1.2;text-align:center;opacity:1;z-index:3;margin-top:7px}.button-text span:first-child{font-size:8px;font-weight:700;color:#999}.button-text span:last-child{font-size:11px}.button-emblem{position:absolute;right:9px;top:7px;font-size:8px;color:var(--red);font-weight:900;z-index:3}
-
-/* AUTH */
-.auth{position:fixed;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(18px);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}.auth.open{display:flex}.auth-box{width:min(470px,94vw);padding:34px;border:1px solid rgba(255,0,61,.35);background:linear-gradient(145deg,#0c0c0c,#120207);border-radius:18px;box-shadow:0 35px 100px #000,0 0 80px rgba(255,0,61,.12);position:relative;animation:authIn .45s cubic-bezier(.16,1,.3,1)}.auth-close{position:absolute;right:14px;top:14px;border:0;background:#1b1b1b;color:#fff;width:34px;height:34px;border-radius:8px}.auth-logo{font-size:20px;font-weight:900}.auth-logo span{color:var(--red)}.auth-box h2{font-size:30px;margin-top:24px;letter-spacing:-1px}.auth-box p{color:#888;font-size:12px;line-height:1.7;margin-top:10px}.discord-login,.server-link{width:100%;margin-top:22px;padding:17px 28px;border-radius:50px;cursor:pointer;border:0;background:#fff;color:#111;box-shadow:rgba(0,0,0,.12) 0 0 8px;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;font-weight:900;transition:all .5s ease;display:block;text-align:center}.discord-login:hover,.server-link:hover{letter-spacing:3px;background:var(--red);color:#fff;box-shadow:0 7px 29px 0 rgba(255,0,61,.55);transform:translateY(-3px)}.discord-login:active,.server-link:active{transform:translateY(7px);transition:100ms}.status{font-size:10px;color:#ff667f;margin-top:10px;min-height:15px}
-
-/* ANIMAÇÕES */
+.button-container{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}.brutalist-button{display:flex;flex-direction:column;align-items:center;justify-content:center;width:150px;height:112px;color:#f3eeee;font-weight:900;text-decoration:none;position:relative;cursor:pointer;overflow:hidden;transition:all .3s cubic-bezier(.25,.8,.25,1);background:#130208;border:3px solid var(--red);border-radius:12px;box-shadow:5px 5px 0 #000,0 0 28px rgba(255,0,61,.12)}.brutalist-button:hover{background:#2a0610;border-color:#fff;transform:translate(-5px,-5px) rotate(1deg);box-shadow:10px 10px 0 #000,0 0 40px rgba(255,0,61,.32)}.brutalist-button:active{transform:translate(-2px,-2px) scale(.98)}.brutalist-button:before,.brutalist-button:after{content:"";position:absolute;top:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}.brutalist-button:before{left:-100%}.brutalist-button:after{left:100%}.brutalist-button:hover:before{animation:swipeRight 1.5s infinite}.brutalist-button:hover:after{animation:swipeLeft 1.5s infinite}.custom-icon{width:48px;height:48px;z-index:3;display:grid;place-items:center;border-radius:12px;background:rgba(255,0,61,.12);border:1px solid rgba(255,0,61,.35);transition:.35s}.custom-icon svg{width:30px;height:30px;fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:.35s}.brutalist-button:hover .custom-icon{transform:translateY(-8px) rotate(-5deg) scale(1.05);background:var(--red);border-color:var(--red);box-shadow:0 0 30px rgba(255,0,61,.45)}.brutalist-button:hover .custom-icon svg{stroke:#fff;animation:iconSpin 2.5s linear infinite}.openai-text{font-size:10px;letter-spacing:1px;opacity:0;max-height:0;overflow:hidden;transition:.3s;z-index:3;margin-top:0}.brutalist-button:hover .openai-text{opacity:1;max-height:30px;margin-top:7px}.button-text{display:flex;flex-direction:column;align-items:center;line-height:1.2;text-align:center;opacity:1;z-index:3;margin-top:7px}.button-text span:first-child{font-size:8px;font-weight:700;color:#999}.button-text span:last-child{font-size:11px}.button-emblem{position:absolute;right:9px;top:7px;font-size:8px;color:var(--red);font-weight:900;z-index:3}
+.auth{position:fixed;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(18px);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}.auth.open{display:flex}.auth-box{width:min(470px,94vw);padding:34px;border:1px solid rgba(255,0,61,.35);background:linear-gradient(145deg,#0c0c0c,#120207);border-radius:18px;box-shadow:0 35px 100px #000,0 0 80px rgba(255,0,61,.12);position:relative;animation:authIn .45s cubic-bezier(.16,1,.3,1)}.auth-close{position:absolute;right:14px;top:14px;border:0;background:#1b1b1b;color:#fff;width:34px;height:34px;border-radius:8px}.auth-logo{font-size:20px;font-weight:900}.auth-logo span{color:var(--red)}.auth-box h2{font-size:30px;margin-top:24px;letter-spacing:-1px}.auth-box p{color:#888;font-size:12px;line-height:1.7;margin-top:10px}.discord-login{width:100%;margin-top:22px;padding:15px;border:0;border-radius:50px;background:var(--red);color:#fff;font-weight:900;letter-spacing:1px;text-transform:uppercase;transition:.5s;box-shadow:rgba(255,0,61,.2) 0 0 8px}.discord-login:hover{letter-spacing:3px;background:#fff;color:#111;transform:translateY(-3px);box-shadow:rgb(255,0,61) 0 7px 29px 0}.discord-login:active{transform:translateY(6px);transition:100ms}.server-link{display:block;text-align:center;margin-top:10px;padding:13px;border:1px solid rgba(255,255,255,.12);border-radius:50px;color:#bbb;font-size:11px;font-weight:800}.server-link:hover{border-color:var(--red);color:#fff}.status{font-size:10px;color:#ff667f;margin-top:10px;min-height:15px}
 @keyframes navIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}@keyframes copyIn{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}@keyframes visualIn{from{opacity:0;transform:translateX(40px) scale(.96)}to{opacity:1;transform:none}}@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1.13)}}@keyframes scan{0%{left:-20%;opacity:0}20%{opacity:1}70%{opacity:.8}100%{left:115%;opacity:0}}@keyframes dotPulse{50%{transform:scale(1.5);box-shadow:0 0 30px var(--red)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes posterFloat{0%,100%{transform:perspective(1000px) rotateY(-9deg) rotateX(3deg) translateY(0)}50%{transform:perspective(1000px) rotateY(-5deg) rotateX(1deg) translateY(-12px)}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes glow{from{transform:scale(.95);opacity:.65}to{transform:scale(1.08);opacity:1}}@keyframes cardA{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-5deg) translateY(-13px)}}@keyframes cardB{0%,100%{transform:rotate(8deg) translateY(0)}50%{transform:rotate(5deg) translateY(-16px)}}@keyframes cardC{0%,100%{transform:rotate(5deg) scale(.86) translateY(0)}50%{transform:rotate(8deg) scale(.9) translateY(-12px)}}@keyframes badge{50%{transform:translateY(-6px) rotate(-2deg)}}@keyframes shine{0%{transform:translateX(-100%) rotate(25deg)}45%,100%{transform:translateX(520%) rotate(25deg)}}@keyframes swipeRight{100%{transform:translateX(200%) skew(-45deg)}}@keyframes swipeLeft{100%{transform:translateX(-200%) skew(-45deg)}}@keyframes iconSpin{to{transform:rotate(360deg)}}@keyframes scrollLine{50%{transform:translateX(12px);opacity:.35}}@keyframes authIn{from{opacity:0;transform:scale(.94) translateY(15px)}to{opacity:1;transform:none}}
-
 @media(max-width:900px){.dashboard-content{grid-template-columns:1fr;padding-top:65px}.visual{height:420px;order:-1}.poster-main{width:220px;height:320px}.float-card{width:105px;height:150px}.orbit{width:360px;height:360px}.copy{text-align:center;margin:auto}.copy p{margin-left:auto;margin-right:auto}.actions,.button-container,.info-strip{justify-content:center}.scroll{display:none}.visual-badge{right:5%;top:10px}}
-@media(max-width:600px){.nav{height:62px;padding:0 15px}.nav-link{display:none}.dashboard{padding-top:62px}.dashboard-content{min-height:calc(100vh - 62px);padding:25px 0 45px}.copy h1{font-size:55px;letter-spacing:-3.5px}.copy p{font-size:12px}.visual{height:350px}.poster-main{width:190px;height:280px}.float-card{width:82px;height:120px}.card-a{left:0;top:70px}.card-b{right:0;top:25px}.card-c{right:20px;bottom:20px}.orbit{width:300px;height:300px}.glow{width:280px;height:280px}.visual-badge{font-size:7px}.brutalist-button{width:145px;height:105px}.info{min-width:120px}.info strong{font-size:12px}.actions{gap:9px}.watch-main{padding:16px 28px}.secondary{padding:16px 24px}.button-container{gap:10px}}
+@media(max-width:600px){.nav{height:62px;padding:0 15px}.nav-link{display:none}.dashboard{padding-top:62px}.dashboard-content{min-height:calc(100vh - 62px);padding:25px 0 45px}.copy h1{font-size:55px;letter-spacing:-3.5px}.copy p{font-size:12px}.visual{height:350px}.poster-main{width:190px;height:280px}.float-card{width:82px;height:120px}.card-a{left:0;top:70px}.card-b{right:0;top:25px}.card-c{right:20px;bottom:20px}.orbit{width:300px;height:300px}.glow{width:280px;height:280px}.visual-badge{font-size:7px}.brutalist-button{width:145px;height:105px}.info{min-width:120px}.info strong{font-size:12px}.actions{gap:9px}.watch-main{width:100%;padding:16px}.secondary{width:100%}.button-container{gap:10px}}
 </style>
 </head>
 <body>
 <header class="nav">
   <a class="logo" href="#inicio">4M<span>SITE</span></a>
-  <div class="nav-right">
-    <a class="nav-link active" href="#inicio">DASHBOARD</a>
-    <button class="search" id="searchBtn" aria-label="Pesquisar">⌕</button>
-  </div>
+  <div class="nav-right"><a class="nav-link active" href="#inicio">DASHBOARD</a><button class="search" id="searchBtn" aria-label="Pesquisar">⌕</button></div>
 </header>
-
 <main id="inicio" class="dashboard">
-  <div class="dashboard-bg" id="dashboardBg"></div>
-  <div class="red-scan"></div>
-  <div class="dashboard-content">
-    <section class="copy">
-      <div class="eyebrow"><i></i> 4MSITE • DASHBOARD</div>
-      <h1>SEU<br><span>FILME.</span><br>SUA SÉRIE.</h1>
-      <p>Um novo jeito de descobrir o que está em alta. Veja os destaques, os títulos mais comentados e os melhores avaliados. Para entrar no catálogo, clique em <b style="color:#fff">QUERO ASSISTIR</b>.</p>
-      <div class="actions">
-        <button class="watch-main" id="watchBtn"><span>▶ &nbsp; QUERO ASSISTIR</span></button>
-        <button class="secondary" id="aboutBtn">CONHECER O 4MSITE</button>
-      </div>
-
-      <div class="button-container">
-        <button class="brutalist-button" id="discordBtn" type="button">
-          <span class="button-emblem">4M</span>
-          <span class="custom-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7.5c2.8-2 7.2-2 10 0 1.2 1.8 1.7 4.1 1.4 6.5-.7 1.5-2.1 2.5-3.8 3.2l-1-1.5M7 7.5c-1.2 1.8-1.7 4.1-1.4 6.5.7 1.5 2.1 2.5 3.8 3.2l1-1.5M8.5 10.5h.01M15.5 10.5h.01M9 14c1.6 1 4.4 1 6 0"/></svg></span>
-          <span class="openai-text">OAUTH OFICIAL</span>
-          <span class="button-text"><span>ACESSO À CONTA</span><span>ENTRAR NO DISCORD</span></span>
-        </button>
-        <button class="brutalist-button" id="serverBtn" type="button">
-          <span class="button-emblem">4M+</span>
-          <span class="custom-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5v-7Z"/><path d="m8 10 4 2.2 4-2.2M12 12.2V17"/></svg></span>
-          <span class="openai-text">COMUNIDADE</span>
-          <span class="button-text"><span>COMUNIDADE 4M</span><span>ENTRAR NO SERVIDOR</span></span>
-        </button>
-      </div>
-
-      <div class="info-strip">
-        <div class="info"><strong>EM ALTA</strong><small>títulos do momento</small></div>
-        <div class="info"><strong>TOP AVALIADOS</strong><small>notas do catálogo</small></div>
-        <div class="info"><strong>TMDB</strong><small>dados atualizados</small></div>
-      </div>
-    </section>
-
-    <section class="visual" aria-label="Destaques visuais">
-      <div class="orbit"></div><div class="glow"></div>
-      <div class="visual-badge" id="trendBadge">● EM ALTA AGORA</div>
-      <div class="float-card card-a"><img id="posterA" src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Destaque"><b id="nameA">DUNA</b></div>
-      <div class="float-card card-b"><img id="posterB" src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt="Destaque"><b id="nameB">SPIDER-MAN</b></div>
-      <div class="float-card card-c"><img id="posterC" src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Destaque"><b id="nameC">INTERESTELAR</b></div>
-      <div class="poster-main"><img id="mainPoster" src="https://image.tmdb.org/t/p/w780/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg" alt="Filme em destaque"><div class="poster-title" id="mainTitle">DUNA: PARTE DOIS</div><div class="poster-label">4MSITE • DESTAQUE</div></div>
-    </section>
-  </div>
-  <div class="scroll"><i></i> dashboard animado • role para continuar</div>
-</main>
-
-<div class="auth" id="auth">
-  <div class="auth-box">
-    <button class="auth-close" id="authClose">×</button>
-    <div class="auth-logo">4M<span>SITE</span></div>
-    <h2>ENTRE PARA ASSISTIR</h2>
-    <p>Para acessar o catálogo e continuar, entre com sua conta Discord. O botão abaixo usa o fluxo OAuth oficial quando você configurar seu aplicativo.</p>
-    <button class="discord-login" id="discordLogin">ENTRAR COM DISCORD</button>
-    <a class="server-link" id="serverLink" href="#" target="_blank" rel="noopener">ENTRAR NO SERVIDOR DO DISCORD</a>
-    <div class="status" id="authStatus"></div>
-  </div>
+<div class="dashboard-bg" id="dashboardBg"></div><div class="red-scan"></div>
+<div class="dashboard-content">
+<section class="copy">
+<div class="eyebrow"><i></i> 4MSITE • DASHBOARD</div>
+<h1>SEU<br><span>FILME.</span><br>SUA SÉRIE.</h1>
+<p>Um novo jeito de descobrir o que está em alta. Veja os destaques, os títulos mais comentados e os melhores avaliados. Para entrar no catálogo, clique em <b style="color:#fff">QUERO ASSISTIR</b>.</p>
+<div class="actions"><button class="watch-main" id="watchBtn"><span>▶ &nbsp; QUERO ASSISTIR</span></button><button class="secondary" id="aboutBtn">CONHECER O 4MSITE</button></div>
+<div class="button-container">
+<button class="brutalist-button" id="discordBtn" type="button"><span class="button-emblem">4M</span><span class="custom-icon"><svg viewBox="0 0 24 24"><path d="M7 7.5c2.8-2 7.2-2 10 0 1.2 1.8 1.7 4.1 1.4 6.5-.7 1.5-2.1 2.5-3.8 3.2l-1-1.5M7 7.5c-1.2 1.8-1.7 4.1-1.4 6.5.7 1.5 2.1 2.5 3.8 3.2l1-1.5M8.5 10.5h.01M15.5 10.5h.01M9 14c1.6 1 4.4 1 6 0"/></svg></span><span class="openai-text">OAUTH OFICIAL</span><span class="button-text"><span>ACESSO À CONTA</span><span>ENTRAR NO DISCORD</span></span></button>
+<button class="brutalist-button" id="serverBtn" type="button"><span class="button-emblem">4M+</span><span class="custom-icon"><svg viewBox="0 0 24 24"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5v-7Z"/><path d="m8 10 4 2.2 4-2.2M12 12.2V17"/></svg></span><span class="openai-text">COMUNIDADE</span><span class="button-text"><span>COMUNIDADE 4M</span><span>ENTRAR NO SERVIDOR</span></span></button>
 </div>
-
+<div class="info-strip"><div class="info"><strong>EM ALTA</strong><small>títulos do momento</small></div><div class="info"><strong>TOP AVALIADOS</strong><small>notas do catálogo</small></div><div class="info"><strong>TMDB</strong><small>dados atualizados</small></div></div>
+</section>
+<section class="visual" aria-label="Destaques visuais"><div class="orbit"></div><div class="glow"></div><div class="visual-badge">● EM ALTA AGORA</div>
+<div class="float-card card-a"><img id="posterA" src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"><b id="nameA">DUNA</b></div>
+<div class="float-card card-b"><img id="posterB" src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"><b id="nameB">SPIDER-MAN</b></div>
+<div class="float-card card-c"><img id="posterC" src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"><b id="nameC">INTERESTELAR</b></div>
+<div class="poster-main"><img id="mainPoster" src="https://image.tmdb.org/t/p/w780/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg"><div class="poster-title" id="mainTitle">DUNA: PARTE DOIS</div><div class="poster-label">4MSITE • DESTAQUE</div></div>
+</section></div><div class="scroll"><i></i> dashboard animado • role para continuar</div>
+</main>
+<div class="auth" id="auth"><div class="auth-box"><button class="auth-close" id="authClose">×</button><div class="auth-logo">4M<span>SITE</span></div><h2>ENTRE PARA ASSISTIR</h2><p>Para acessar o catálogo, entre com sua conta Discord. Você será levado ao verificador e, após a verificação, retornará ao 4MSITE.</p><button class="discord-login" id="discordLogin">ENTRAR COM DISCORD</button><a class="server-link" id="serverLink" href="https://discord.gg/4mcomunity" target="_blank" rel="noopener">ENTRAR NO SERVIDOR DO DISCORD</a><div class="status" id="authStatus"></div></div></div>
 <script>
-const TMDB_TOKEN = "COLE_SEU_TMDB_API_READ_ACCESS_TOKEN_AQUI";
-const DISCORD_CLIENT_ID = "1540481114274271312";
-const DISCORD_REDIRECT_URI = "https://api.purincash.com/api/auth/discord/callback";
-const DISCORD_OAUTH_URL = "https://discord.com/oauth2/authorize?client_id="+encodeURIComponent(DISCORD_CLIENT_ID)+"&response_type=code&redirect_uri="+encodeURIComponent(DISCORD_REDIRECT_URI)+"&scope=identify%20guilds.join%20email";
-const DISCORD_SERVER_URL = "https://discord.gg/4mcomunity";
+const TMDB_TOKEN="COLE_SEU_TMDB_API_READ_ACCESS_TOKEN_AQUI";
+const DISCORD_CLIENT_ID="1540481114274271312";
+const DISCORD_REDIRECT_URI="https://api.purincash.com/api/auth/discord/callback";
+const DISCORD_SERVER_URL="https://discord.gg/4mcomunity";
+const DISCORD_SCOPE="identify%20guilds.join%20email";
+const DISCORD_OAUTH_URL="https://discord.com/oauth2/authorize?client_id="+encodeURIComponent(DISCORD_CLIENT_ID)+"&redirect_uri="+encodeURIComponent(DISCORD_REDIRECT_URI)+"&response_type=code&scope="+DISCORD_SCOPE+"&prompt=consent";
 const IMG="https://image.tmdb.org/t/p/";
-
-const fallbackMovie={title:"Duna: Parte Dois",backdrop:"/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",poster:"/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"};
-const fallbackCards=[
- {title:"Duna",poster:"/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"},
- {title:"Homem-Aranha",poster:"/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"},
- {title:"Interestelar",poster:"/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"}
-];
-function hasToken(){return TMDB_TOKEN && !TMDB_TOKEN.includes("COLE_SEU_")}
-async function tmdb(path){const r=await fetch("https://api.themoviedb.org/3"+path,{headers:{Authorization:"Bearer "+TMDB_TOKEN,accept:"application/json"}});if(!r.ok)throw new Error("TMDB "+r.status);return r.json()}
-function setMovie(m){
- const backdrop=m.backdrop_path?IMG+"original"+m.backdrop_path:IMG+"original"+fallbackMovie.backdrop;
- const poster=m.poster_path?IMG+"w780"+m.poster_path:IMG+"w780"+fallbackMovie.poster;
- document.getElementById("dashboardBg").style.backgroundImage=`linear-gradient(90deg,#030303 0%,rgba(3,3,3,.92) 35%,rgba(3,3,3,.58) 68%,rgba(3,3,3,.25) 100%),linear-gradient(0deg,#030303 0%,transparent 40%,rgba(3,3,3,.3) 100%),url('${backdrop}')`;
- document.getElementById("mainPoster").src=poster;document.getElementById("mainTitle").textContent=(m.title||m.name||fallbackMovie.title).toUpperCase();
-}
-async function loadTrending(){
- if(!hasToken())return;
- try{const data=await tmdb("/trending/movie/week?language=pt-BR");const arr=(data.results||[]).filter(x=>x.backdrop_path||x.poster_path);if(!arr.length)return;setMovie(arr[0]);const cards=arr.slice(0,3);cards.forEach((m,i)=>{const img=m.poster_path?IMG+"w500"+m.poster_path:"";const el=document.getElementById(["posterA","posterB","posterC"][i]);const nm=document.getElementById(["nameA","nameB","nameC"][i]);if(img)el.src=img;nm.textContent=(m.title||"").toUpperCase().slice(0,20)});}catch(e){console.warn("TMDB indisponível; usando destaque local.",e)}
-}
-
+function hasToken(){return TMDB_TOKEN&&!TMDB_TOKEN.includes("COLE_SEU_")}
+async function tmdb(path){const r=await fetch("https://api.themoviedb.org/3"+path,{headers:{Authorization:"Bearer "+TMDB_TOKEN,accept:"application/json"}});if(!r.ok)throw Error("TMDB "+r.status);return r.json()}
+async function loadTrending(){if(!hasToken())return;try{const d=await tmdb("/trending/movie/week?language=pt-BR");const a=(d.results||[]).filter(x=>x.backdrop_path||x.poster_path);if(!a.length)return;const m=a[0];const back=m.backdrop_path?IMG+"original"+m.backdrop_path:IMG+"original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg";const poster=m.poster_path?IMG+"w780"+m.poster_path:IMG+"w780/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg";document.getElementById("dashboardBg").style.backgroundImage=`linear-gradient(90deg,#030303 0%,rgba(3,3,3,.92) 35%,rgba(3,3,3,.58) 68%,rgba(3,3,3,.25) 100%),linear-gradient(0deg,#030303 0%,transparent 40%,rgba(3,3,3,.3) 100%),url('${back}')`;document.getElementById("mainPoster").src=poster;document.getElementById("mainTitle").textContent=(m.title||m.name||"DUNA: PARTE DOIS").toUpperCase();a.slice(0,3).forEach((x,i)=>{const p=x.poster_path?IMG+"w500"+x.poster_path:"";if(p)document.getElementById(["posterA","posterB","posterC"][i]).src=p;document.getElementById(["nameA","nameB","nameC"][i]).textContent=(x.title||"").toUpperCase().slice(0,20)})}catch(e){console.warn("TMDB indisponível; usando destaque local.",e)}}
 function openAuth(){document.getElementById("auth").classList.add("open");document.body.style.overflow="hidden"}
 function closeAuth(){document.getElementById("auth").classList.remove("open");document.body.style.overflow=""}
-document.getElementById("watchBtn").onclick=openAuth;
-document.getElementById("discordBtn").onclick=openAuth;
-document.getElementById("authClose").onclick=closeAuth;
-document.getElementById("auth").onclick=e=>{if(e.target.id==="auth")closeAuth()};
-document.getElementById("discordLogin").onclick=()=>{const s=document.getElementById("authStatus");if(DISCORD_CLIENT_ID.includes("COLE_SEU")){s.textContent="Configure o Client ID do seu aplicativo Discord e o callback OAuth no backend.";return}window.location.href=DISCORD_OAUTH_URL};
-document.getElementById("serverBtn").onclick=()=>{if(DISCORD_SERVER_URL.includes("COLE_AQUI")){openAuth();document.getElementById("authStatus").textContent="Coloque o convite do seu servidor Discord em DISCORD_SERVER_URL.";return}window.open(DISCORD_SERVER_URL,"_blank","noopener")};
-document.getElementById("serverLink").onclick=e=>{if(DISCORD_SERVER_URL.includes("COLE_AQUI")){e.preventDefault();document.getElementById("authStatus").textContent="Configure o link do seu servidor Discord."}};
-document.getElementById("aboutBtn").onclick=()=>document.getElementById("auth").classList.add("open");
-document.getElementById("searchBtn").onclick=()=>{document.getElementById("authStatus").textContent="A pesquisa fica disponível depois de entrar no 4MSITE.";openAuth()};
-window.addEventListener("keydown",e=>{if(e.key==="Escape")closeAuth()});
-if(new URLSearchParams(location.search).get("discord_callback")==="1")openAuth();
-loadTrending();
+watchBtn.onclick=openAuth;discordBtn.onclick=openAuth;authClose.onclick=closeAuth;auth.onclick=e=>{if(e.target===auth)closeAuth()};
+discordLogin.onclick=()=>{authStatus.textContent="Abrindo a verificação do Discord...";window.location.href=DISCORD_OAUTH_URL};
+serverBtn.onclick=()=>window.open(DISCORD_SERVER_URL,"_blank","noopener");
+aboutBtn.onclick=openAuth;
+searchBtn.onclick=()=>{openAuth();authStatus.textContent="A pesquisa fica disponível depois de entrar no 4MSITE."};
+window.addEventListener("keydown",e=>{if(e.key==="Escape")closeAuth()});loadTrending();
 </script>
 </body>
 </html>
